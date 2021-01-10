@@ -1,0 +1,561 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+  list-style: none;
+  padding-bottom: 20px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Globalne style tekstu */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    line-height: 1.7;
+}
+
+p{
+    margin-top: 6px;
+}
+
+h1,h2,h3,h4, label{
+    color:#45474f;
+}
+
+h1{
+    font-size:54px;
+    line-height: 1.2;
+}
+
+h2{
+    font-size:25px;
+   
+    text-transform: uppercase;
+}
+
+h3,h4,strong
+{
+    font-weight: 600;
+}
+
+h3{
+    font-size: 18px;
+}
+
+h5{
+  font-size:15px;
+  text-transform: uppercase;
+  color:grey;
+  padding-bottom: 15px;
+  
+  
+}
+
+/*kolumny kontenery, sekcje */
+
+body
+{
+    background-color: #f9f9f9;
+}
+
+section{
+    clear:both;
+    overflow: auto;
+}
+
+.row
+{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#login
+{
+    padding: 180px 0;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+
+/* The side navigation menu */
+.sidenav2 {
+  height: 60px; /* 100% Full-height */
+  width: 100%; /* 0 width - change this with JavaScript */
+  position:static ; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #EEEEEE; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-left: 90px; /* Place content 60px from the top */
+  padding-top: 12px;
+  
+ 
+}
+
+ /* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 70px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #663399; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 30px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+   
+  }
+  
+
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 0px 0px 30px 18px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: inline-flex;
+    transition: 0.3s;
+  }
+  
+.sidenav span{
+  margin-left: 60px;
+  display: flex;
+  overflow: hidden;
+}
+
+
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: flex;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 150px;
+  }
+  
+  
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+
+  .Kalendarz {
+    height: 45%;  
+    width: 100%;
+    padding: 10px;
+    
+  }
+
+  
+  .Dania {
+ 
+    height: 40%;  
+    width: 100%;
+    margin-top: 28px;
+  
+    
+  }
+
+  .full
+  {
+
+    height: 85%;  
+    width: 100%;
+
+    
+  }
+  
+ .left-side
+ {
+
+  height: 85%;  
+  width: 100%;
+
+  
+ }
+
+
+ .row
+ {
+    padding: 35px 20px 20px 90px ;
+   height: 100%;
+ }
+
+
+
+.kalendarz {
+  
+  border-radius: 0;
+  width: 100%;
+ height:auto;
+  background-color: #f5f7f6;
+  color: #040605;
+}
+@media screen and (min-width: 55em) {
+  .kalendarz {
+
+  }
+}
+
+.data-tytul {
+
+  width: 100%;
+  display: table;
+  text-align: center;
+  background: #f5f7f6;
+  padding: 0.1rem;
+  margin-bottom: 0;
+}
+.data-tytul:after {
+  display: table;
+  clear: both;
+}
+
+.poprzedni-miesiac{
+  position: relative;
+  float: left;
+  text-align: left;
+  cursor: pointer;
+  width: 22px;
+  height: 30px;
+}
+.poprzedni-miesiac:after {
+    content: "";
+    display: inline;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 20px;
+    left: 20px;
+    top: 30px;
+    margin: auto;
+    border-top: 1.5px solid black;
+    border-right: 1.5px solid black;
+    -webkit-transform: rotate(224deg);
+    transform: rotate(224deg);
+}
+.nastepny-miesiac{
+  position: relative;
+  float: right;
+  text-align: right;
+  cursor: pointer;
+  width: 22px;
+  height: 30px;
+}
+.nastepny-miesiac:after {
+    content: "";
+    display: inline;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 20px;
+    top: -15px;
+    margin: auto;
+    border-top: 1.5px solid black;
+    border-right: 1.5px solid black;
+    -webkit-transform: rotate(44deg);
+    transform: rotate(44deg);
+}
+.data-tytul__year {
+  display: block;
+  position: relative;
+  float: right;
+  font-size: 1rem;
+  line-height: 30px;
+  width: 47%;
+  padding: 0 0.5rem;
+  text-align: right;
+  
+  
+  
+}
+.data-tytul__year2 {
+    display: block;
+  position: relative;
+  float: left;
+  font-size: 1rem;
+  line-height: 3px;
+  width: 4%;
+  padding: 0 0.5rem;
+  text-align: left;
+  }
+.data-tytul__year select{
+  padding: 2px 6px;
+  font-size: 16px;
+}
+@media screen and (min-width: 55em) {
+  .data-tytul__year {
+    width: 47%;
+  }
+}
+
+.data-tytul__month {
+  position: relative;
+  float: left;
+  font-size: 1rem;
+  line-height: 30px;
+  width: 47%;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+.data-tytul__month select{
+  padding: 2px 6px;
+  font-size: 16px;
+}
+@media screen and (min-width: 55em) {
+  .data-tytul__month {
+    width: 47%;
+  }
+}
+
+.menu__ {
+  width: 100%;
+  float: none;
+  padding: 2rem 1.5rem 2rem 4rem;
+  color: #040605;
+  
+}
+
+
+
+
+.sidebar__list {
+  list-style: none;
+  
+ 
+}
+
+.sidebar__list-item {
+  
+  color: #2d4338;
+  font-weight: 100;
+  font-size: 1rem;
+  
+}
+
+.list-item__time {
+  display: inline-block;
+  /*width: 60px;*/
+}
+
+
+.sidebar__list-item--complete {
+  color: rgba(4, 6, 5, 0.3);
+}
+.sidebar__list-item--complete .list-item__time {
+  color: rgba(4, 6, 5, 0.3);
+}
+
+.data_menu_lewe {
+ 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0rem;
+  margin-top: 0.5rem;
+}
+.data_menu_lewe span {
+  float: center;
+  font-weight: 30;
+}
+
+.calendar__heading-highlight {
+  color: #2d444a;
+  font-weight: 900;
+}
+
+.dni_tygodnia {
+ 
+  display: inline-table;
+  width: 100%;  
+  padding: 2px 0px 12px 50px;
+}
+@media screen and (min-width: 55em) {
+  .dni_tygodnia {
+    
+    
+  }
+}
+
+.dni_tytul {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 32px;
+          flex: 32px 0 0;
+}
+
+.dzien {
+  width: 100%;
+  padding: 0 5px;
+  color: #2d4338;
+  font-weight: 100;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 1rem;
+}
+
+.kalendarz_tydzien {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1 1 0;
+}
+
+.kalendarz_dzien {
+  width: 100%;
+  height: auto;
+
+}
+
+.kalendarz_dzien.wybrane .kalendarz_data, .kalendarz_dzien.wybrane .kalendarz_dania{
+  color: #4285f4;
+}
+
+.kalendarz_data {
+  color: #040605;
+  font-weight: 500;
+  
+}
+
+
+.kalendarz_tydzien .nieaktywny .kalendarz_data,
+.kalendarz_tydzien .nieaktywny .task-count {
+  color: #c6c6c6;
+}
+.kalendarz_tydzien .dzis .kalendarz_data {
+  color: #fd588a;
+}
+
+.kalendarz_dania {
+  color: #040605;
+  display: -webkit-box;
+  display: flex;
+  font-size: 0.8rem;
+}
+@media screen and (min-width: 55em) {
+  .kalendarz_dania {
+    font-size: 1rem;
+  }
+}
+.kalendarz_dania.kalendarz_dania--dzis {
+  color: #fd588a;
+}
+
+/* Popup Open button */ 
+.open-button{
+    
+    padding:10px;
+	padding-left: 3rem;
+	padding-right: 3rem;
+  color:black;
+
+	
+   
+}
+ 
+.open-button:hover{
+  
+}
+ 
+.popup {
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    width:100%;
+    height:100%;
+    display:none;
+}
+ 
+/* Popup inner div */
+.popup-content {
+    width: 700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px;
+    margin-top: 100px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+}
+ 
+/* Popup close button */
+.close-button {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.8);
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration:none;
+}
+ 
+.close-button:hover {
+    background: rgba(0,0,0,1);
+}
+ 
+@media screen and (max-width: 720px) {
+.popup-content {
+    width:90%;
+    } 
+}
