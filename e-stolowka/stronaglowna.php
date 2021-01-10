@@ -7,9 +7,10 @@ include_once 'functions.php';
     <head>
     <meta charset="utf-8">
     <title>Tytuł strony</title>
-
+   
     <link rel="stylesheet" href="style/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style1.css" >
+    <link rel="stylesheet" href="1111.css" >
+
     <script src="scripts.js"></script>
     <script src="js/jquery.min.js"></script>
    
@@ -53,14 +54,16 @@ include_once 'functions.php';
     <div class="row">
     
 
-        <div class="col-6">
+        <div class="col-7">
           <div class="Kalendarz shadow rounded">	<div id="calendar_div">
           <?php echo WywolajKalendarz(); ?>
           </div>
           </div>
 
           <div class="Dania shadow rounded">
-         
+          <div class="card-header  text-center">
+        ZAMÓWIONE DANIA 
+         </div>
           <aside class="menu__ " id="lista_dan">
           <?php echo ZamowioneDania(); ?>		
          </aside>       
@@ -70,9 +73,11 @@ include_once 'functions.php';
 
 
 
-      <div class="col-6">
-		  <div class="full shadow rounded ">
-    
+      <div class="col-5">
+		  <div class="Jadlospis full shadow rounded ">
+    <div class="card-header text-center">
+    STWÓRZ JADŁOSPIS 
+    </div>
 
       <aside class="menu__ " id="lista_dan2">
       <?php echo StworzJadlospis(); ?>		
