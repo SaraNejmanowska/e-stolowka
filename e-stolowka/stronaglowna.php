@@ -9,7 +9,7 @@ include_once 'functions.php';
     <title>Tytuł strony</title>
    
     <link rel="stylesheet" href="style/css/bootstrap.min.css">
-    <link rel="stylesheet" href="1111.css" >
+    <link rel="stylesheet" href="11111.css" >
 
     <script src="scripts.js"></script>
     <script src="js/jquery.min.js"></script>
