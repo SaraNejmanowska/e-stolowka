@@ -145,12 +145,13 @@ section{
     width: 70px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 10px%; /* Stay at the top */
+    top: 55px; /* Stay at the top */
     left: 0;
     background-color: #663399; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 30px; /* Place content 60px from the top */
+    padding-top: 20px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+ 
    
   }
   
@@ -166,7 +167,7 @@ section{
   }
   
 .sidenav span{
-  margin-left: 60px;
+  margin-left: 20px;
   display: flex;
   overflow: hidden;
 }

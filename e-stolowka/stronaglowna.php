@@ -34,14 +34,10 @@ include_once 'functions.php';
       <div id="mySidenav" class="sidenav">
 
         <ul>
-          <li><a href="default.asp"><img src="img/home.png"><span>Home</span></a></li>
-          <li><a href="default.asp"><img src="img/home.png"><span>Home</span></a></li>
-          <li><a href="default.asp"><img src="img/home.png"><span>Home</span></a></li>
-           <li><a href="default.asp"><img src="img/home.png"><span>Home</span></a></li>
+          <li><a href="default.asp"><img src="img/home.png"><span>Pulpit</span></a></li>
+          <li><a href="default.asp"><img src="img/administration.png"><span>Ustawienia</span></a></li> 
         </ul>
   
-  
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       </div>
 
       </section>
@@ -62,7 +58,7 @@ include_once 'functions.php';
 
           <div class="Dania shadow rounded">
           <div class="card-header  text-center">
-        ZAMÓWIONE DANIA 
+        PODGLĄD ZAMÓWIONYCH DAŃ
          </div>
           <aside class="menu__ " id="lista_dan">
           <?php echo ZamowioneDania(); ?>		
