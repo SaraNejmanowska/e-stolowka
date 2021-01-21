@@ -395,12 +395,11 @@ section{
   display: inline-table;
   width: 100%;  
   text-align: center;
-  font-size: 23px;
+  font-size: 20px;
   padding: 0 30 0 30;
   
   
 }
-
 
 .dni_tytul {
   
@@ -416,7 +415,7 @@ section{
   padding: 0 0 5 0;
   color: #2d4338;
   font-weight: 500;
-  font-size:25px;
+  font-size:23px;
   text-transform: uppercase;
 }
 
