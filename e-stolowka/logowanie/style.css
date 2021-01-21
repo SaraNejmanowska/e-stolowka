@@ -87,7 +87,11 @@ h3{
 
 body
 {
-    background-color: #a64dff;
+	
+	background-image: url(3.jpg);
+	background-size: cover;
+	opacity: 0.9;
+		
 }
 
 section{

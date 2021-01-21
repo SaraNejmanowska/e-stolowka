@@ -22,16 +22,18 @@ include_once 'functions.php';
 
 <section>
 
-  <div id="mySidenav2" class="sidenav2">
- <!-- Use any element to open the sidenav -->
- <span onclick="openNav()"><img src="img/menu.png"></span>
-  </div>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+  <span onclick="openNav()"><img src="img/menu.png"></span>
+  </a>
+</nav>
+
 </section>
 
   
       <section >
               
-      <div id="mySidenav" class="sidenav">
+      <div id="mySidenav" class="sidenav bg-danger">
 
         <ul>
           <li><a href="default.asp"><img src="img/home.png"><span>Pulpit</span></a></li>
@@ -47,20 +49,20 @@ include_once 'functions.php';
         
   <section>
     <div class="container-fluid">
-    <div class="row">
+    <div class="row home">
     
 
         <div class="col-7">
-          <div class="Kalendarz shadow rounded">	<div id="calendar_div">
+          <div class="shadow rounded">	<div id="calendar_div">
           <?php echo WywolajKalendarz(); ?>
           </div>
           </div>
 
           <div class="Dania shadow rounded">
-          <div class="card-header  text-center">
+          <div class="card-header bg-danger    text-center">
         PODGLĄD ZAMÓWIONYCH DAŃ
          </div>
-          <aside class="menu__ " id="lista_dan">
+          <aside class="menu__lewe text-center" id="lista_dan">
           <?php echo ZamowioneDania(); ?>		
          </aside>       
       
@@ -71,11 +73,11 @@ include_once 'functions.php';
 
       <div class="col-5">
 		  <div class="Jadlospis full shadow rounded ">
-    <div class="card-header text-center">
+    <div class="card-header bg-danger text-center">
     STWÓRZ JADŁOSPIS 
     </div>
 
-      <aside class="menu__ " id="lista_dan2">
+      <aside class="menu__prawe " id="lista_dan2">
       <?php echo StworzJadlospis(); ?>		
       </aside>     
 

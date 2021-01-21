@@ -35,16 +35,15 @@ function WywolajKalendarz($rok = '', $miesiac = ''){  //funkcja wywołująca kal
 	$poprzedniRok = date("Y", strtotime('-1 month', strtotime($data)));  //ustalanie poprzeniego roku
 	$liczbaDniWMiesiacuPoprzednim = cal_days_in_month(CAL_GREGORIAN, $poprzedniMiesiac, $poprzedniRok); //ustalanie liczby dni w  poprzednim miesiącau
 	
-	
 ?>
 
 
 <?php
-/*
+
 $host = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "db";
+$dbname = "dbd";
 
 @ $db = new mysqli($host, $username, $password, $dbname);
 
@@ -53,17 +52,14 @@ if(mysqli_connect_errno())
     die("Connection could not be established");
 }
 
-
-
-
  if(!empty($_POST['Class1'])) {
          // echo 'Śniadanie:  ' . $_POST['Class1'];
 			$wybrane = $_POST['Class1'];
 			$wybrana_data = $_POST['submit'];
-			echo 'chuj'.$wybrana_data;
+			echo ''.$wybrana_data;
 			echo 'Śniadanie:  ' . $_POST['Class1'];
-			$sql = "INSERT INTO zamowienia (id, title, date, username)
-VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski')";
+			$sql = "INSERT INTO zamowienia (id, title, date, username,typ)
+VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski','Śniadanie')";
 
 			if ($db->query($sql) === TRUE) {
 			echo "New record created successfully";
@@ -73,15 +69,78 @@ VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilew
 }
 
 $db->close();
-		  
-		  
-		  
+		   
         } else {
           echo 'Śniadanie: Wybierz coś na śniadanie.';
+		}
+		
+
+
+@ $db = new mysqli($host, $username, $password, $dbname);
+
+if(mysqli_connect_errno())
+{
+    die("Connection could not be established");
+}
+
+ if(!empty($_POST['Class2'])) {
+         // echo 'Śniadanie:  ' . $_POST['Class1'];
+			$wybrane = $_POST['Class2'];
+			$wybrana_data = $_POST['submit'];
+			echo ''.$wybrana_data;
+			echo 'Obiad:  ' . $_POST['Class2'];
+			$sql = "INSERT INTO zamowienia (id, title, date, username,typ)
+VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski','Obiad')";
+
+			if ($db->query($sql) === TRUE) {
+			echo "New record created successfully";
+																	} 			
+																	else {
+  echo "Error: " . $sql . "<br>" . $db->error;
+}
+
+$db->close();
+		   
+        } else {
+          echo 'Obiad: Wybierz coś na obiad.';
         }
 
-*/
+
+
+@ $db = new mysqli($host, $username, $password, $dbname);
+
+if(mysqli_connect_errno())
+{
+    die("Connection could not be established");
+}
+
+ if(!empty($_POST['Class3'])) {
+         // echo 'Śniadanie:  ' . $_POST['Class1'];
+			$wybrane = $_POST['Class3'];
+			$wybrana_data = $_POST['submit'];
+			echo ''.$wybrana_data;
+			echo 'Kolacja:  ' . $_POST['Class3'];
+			$sql = "INSERT INTO zamowienia (id, title, date, username,typ)
+VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski','Kolacja')";
+
+			if ($db->query($sql) === TRUE) {
+			echo "New record created successfully";
+																	} 			
+																	else {
+  echo "Error: " . $sql . "<br>" . $db->error;
+}
+
+$db->close();
+		   
+        } else {
+          echo 'Kolacja: Wybierz coś na kolacje.';
+        }
+
+
 ?>
+
+
+
 
 
 
@@ -92,7 +151,7 @@ $db->close();
 			
 			
 			
-			<?php $cos = '<h2 class="data_menu__ ">'.dataPolska($data, 'F').' '.dataPolska($data, 'Y').'</h2>'; echo $cos; ?>
+			<?php $cos = '<div class="data_menu__ ">'.dataPolska($data, 'F').' '.dataPolska($data, 'Y').'</div>'; echo $cos; ?>
 			<!--
 			<select class="month-dropdown">
 					<?php //echo listaMiesiecy($aktualnyMiesiac); ?>
@@ -254,8 +313,8 @@ function dataPolska($data, $format) //funkcja zamieniajaca angielskie nazwy mies
 
 function ZamowioneDania($data = ''){  //funkcja wyswietlająca zamówione dania w zależnosci na jaką date najedzie użytkownik
 	$data = $data?$data:date("Y-m-d"); //ustalanie aktualnej daty
-	$data_menu__  = '
-	<h5 class="data_menu__  text-center">'.dataPolska($data, 'l').'<br>'.dataPolska($data, 'd F').'</h5>';  //to odpowiada za Wednesday December 23
+	$data_menu__  = '';
+	  //to odpowiada za Wednesday December 23
 	
 	global $db;
 	$wynik = $db->query("SELECT title FROM zamowienia  WHERE date = '".$data."' AND username = 'amilewski'");
@@ -264,7 +323,7 @@ function ZamowioneDania($data = ''){  //funkcja wyswietlająca zamówione dania 
 		
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__  .= '<li class="sidebar__list-item"><span class="list-item__time">'.$i.'.</span>'.$row['title'].'</li>';
+            $data_menu__  .= '<li class="sidebar__list-item"><span class="list-item__time"></span>'.$row['title'].'</li>';
         }
 		$data_menu__  .= '</ul>';
 	}
@@ -272,22 +331,13 @@ function ZamowioneDania($data = ''){  //funkcja wyswietlająca zamówione dania 
 	echo $data_menu__ ;
 }
 
-function ZamowDania($data = ''){  //funkcja wyswietlająca zamówione dania w zależnosci na jaką date najedzie użytkownik
-
-	$pop ='<a class="open-button" popup-open="popup-1" href="druga.php">
-		Wybierz posiłki</a>';
-	
-	echo $pop;
-	
-}
 
 
 function StworzJadlospis($data = ''){  //funkcja wyswietlająca zamówione dania w zależnosci na jaką date najedzie użytkownik
 	$data = $data?$data:date("Y-m-d"); //ustalanie aktualnej daty
-	$data_menu__  = '<h5 class="$data_menu__  text-center">'.dataPolska($data, 'l').'<br>'.dataPolska($data, 'd F').'</h5>';  //to odpowiada za Wednesday December 23
+	$data_menu__  = '<div class="data_menu___  ">'.dataPolska($data, 'l').'<br>'.dataPolska($data, 'd F').'</div>';  //to odpowiada za Wednesday December 23
 	$pop ='<div class="text-center"><button name = "submit" class="open-button" name="submit" value="'.$data.'">Zapisz</button></div>';
 	global $db;
-	
 	$form =  '<form action="" method="post">';
 	$endform ='</form>';
 	echo $form;
@@ -298,7 +348,7 @@ function StworzJadlospis($data = ''){  //funkcja wyswietlająca zamówione dania
 		$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Śniadanie</li>';
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__   .= '<li class="sidebar__list-item"><input type="radio" name="Class1" value="'.$row['title'].'" >'.$row['title'].'</li>';
+            $data_menu__   .= '<li class="sidebar__list-item"> <input type="radio" name="Class1" value="" '.$row['title'].'" > '.$row['title'].'</li>';
         }
 		$data_menu__   .= '</ul>';
 	}
@@ -308,7 +358,7 @@ function StworzJadlospis($data = ''){  //funkcja wyswietlająca zamówione dania
 		$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Obiad</li>';
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__   .= '<li class="sidebar__list-item"><input type="radio" name="Class2" value="'.$row['title'].'" >'.$row['title'].'</li>';
+            $data_menu__   .= '<li class="sidebar__list-item"> <input type="radio" name="Class2" value="" '.$row['title'].'" > '.$row['title'].'</li>';
         }
 		$data_menu__   .= '</ul>';
 	}
@@ -318,7 +368,7 @@ function StworzJadlospis($data = ''){  //funkcja wyswietlająca zamówione dania
 		$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Kolacja</li>';
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__   .= '<li class="sidebar__list-item"><input type="radio" name="Class3" value="'.$row['title'].'">'.$row['title'].'</li>';
+            $data_menu__   .= '<li class="sidebar__list-item"> <input type="radio" name="Class3" value="" '.$row['title'].'"> '.$row['title'].'</li>';
 			
         }
 		$data_menu__   .= '</ul>';

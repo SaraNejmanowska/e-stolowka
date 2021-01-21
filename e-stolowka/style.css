@@ -96,14 +96,11 @@ h5{
 
 /*kolumny kontenery, sekcje */
 
-body
-{
-    background-color: #D9D6DF;
-}
+
 
 section{
     clear:both;
-    overflow: auto;
+    
 }
 
 .row
@@ -123,31 +120,15 @@ section{
  }
 
 
-/* The side navigation menu */
-.sidenav2 {
-  height: 55px; /* 100% Full-height */
-  width: 100%; /* 0 width - change this with JavaScript */
-  position:static ; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: white; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-left: 20px; /* Place content 60px from the top */
-  padding-top: 12px;
-  
- 
-}
-
  /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 70px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
+    position: fixed;
     z-index: 1; /* Stay on top */
-    top: 55px; /* Stay at the top */
+    top: 58px; /* Stay at the top */
     left: 0;
-    background-color: #663399; /* Black*/
+    /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -198,17 +179,17 @@ section{
 
 
 
-  .Kalendarz {
-    height: 45%;  
+  #calendar_div {
+    
     width: 100%;
-    padding: 10px;
+    padding:0 0 0 0;
     
   }
 
   
   .Dania {
  
-    height: 42%;  
+    height: 31%;  
     width: 100%;
     margin-top: 28px;
     background-color: white;
@@ -226,25 +207,37 @@ section{
  }
 
 
- .row
+ .home
  {
-    padding: 50px 90px 10px 140px ;
+    padding: 40px 90px 10px 140px ;
     height: 90%;
  }
-
 
 
 .kalendarz {
   background-color: white;
   border-radius: 0;
   width: 100%;
- height:auto;
+  height:62%;
   color: #040605;
+  padding: 7 20 5 20;
 }
-@media screen and (min-width: 55em) {
-  .kalendarz {
 
-  }
+.data_menu__
+{
+  padding: 10;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.data_menu___
+{
+  padding: 0 0 25 0; 
+  color:gray;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .data-tytul {
@@ -252,10 +245,8 @@ section{
   width: 100%;
   display: table;
   text-align: center;
- 
-  padding: 0.1rem;
-  margin-bottom: 0;
 }
+
 .data-tytul:after {
   display: table;
   clear: both;
@@ -314,7 +305,7 @@ section{
   font-size: 1rem;
   line-height: 30px;
   width: 47%;
-  padding: 0 0.5rem;
+ 
   text-align: right;
   
   
@@ -327,11 +318,11 @@ section{
   font-size: 1rem;
   line-height: 3px;
   width: 4%;
-  padding: 0 0.5rem;
+
   text-align: left;
   }
 .data-tytul__year select{
-  padding: 2px 6px;
+ 
   font-size: 16px;
 }
 @media screen and (min-width: 55em) {
@@ -346,66 +337,52 @@ section{
   font-size: 1rem;
   line-height: 30px;
   width: 47%;
-  padding: 0 0.5rem;
+ 
   text-align: center;
 }
 .data-tytul__month select{
   padding: 2px 6px;
   font-size: 16px;
 }
-@media screen and (min-width: 55em) {
-  .data-tytul__month {
-    width: 47%;
-  }
-}
 
-.menu__ {
+.menu__lewe {
   width: 100%;
-  padding: 2rem 1.5rem 2rem 4rem;
+  padding: 30 50 40 50;
   color: #040605;
   
 }
 
 
-
+.menu__prawe {
+  width: 100%;
+  padding: 20 50 40 50;
+  color: #040605;
+  
+}
 
 .sidebar__list {
-  list-style: none;
-  
- 
+  list-style: none;  
 }
 
 .sidebar__list-item {
   
   color: #2d4338;
   font-weight: 100;
-  font-size: 1rem;
-  
+  font-size: 19px;
+  padding: 0 0 0 0;
+ 
 }
 
 .list-item__time {
   display: inline-block;
-  /*width: 60px;*/
 }
 
-
 .sidebar__list-item--complete {
-  color: rgba(4, 6, 5, 0.3);
+  color:#dc3545!important;
+ font-weight: 700;
 }
 .sidebar__list-item--complete .list-item__time {
   color: rgba(4, 6, 5, 0.3);
-}
-
-.data_menu_lewe {
- 
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-bottom: 0rem;
-  margin-top: 0.5rem;
-}
-.data_menu_lewe span {
-  float: center;
-  font-weight: 30;
 }
 
 .calendar__heading-highlight {
@@ -417,17 +394,16 @@ section{
  
   display: inline-table;
   width: 100%;  
-  padding: 2px 0px 12px 50px;
+  text-align: center;
+  font-size: 23px;
+  padding: 0 30 0 30;
+  
   
 }
-@media screen and (min-width: 55em) {
-  .dni_tygodnia {
-    
-    
-  }
-}
+
 
 .dni_tytul {
+  
   display: -webkit-box;
   display: flex;
   -webkit-box-flex: 32px;
@@ -435,12 +411,12 @@ section{
 }
 
 .dzien {
+  
   width: 100%;
-  padding: 0 0 10 0;
+  padding: 0 0 5 0;
   color: #2d4338;
-  font-weight: 100;
-  -webkit-font-smoothing: subpixel-antialiased;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size:25px;
   text-transform: uppercase;
 }
 
@@ -454,19 +430,19 @@ section{
 
 .kalendarz_dzien {
   width: 100%;
-  height: auto;
- height: 30px;
+  height: 35px;
+   padding: 0 0 45 0;
 
 }
 
 .kalendarz_dzien.wybrane .kalendarz_data, .kalendarz_dzien.wybrane .kalendarz_dania{
-  color: #9964CE;
+  color: #dc3545;
   font-weight: 600;
 }
 
 .kalendarz_data {
   color: #040605;
-  font-weight: 100;
+  font-weight: 400;
   
 }
 
@@ -478,8 +454,8 @@ section{
 .kalendarz_tydzien .dzis .kalendarz_data {
   color: white;
   font-weight: 300;
-  background-color: #663399;
-  border-radius: 15px;
+  background-color: #dc3545;
+  border-radius: 50%;
   padding: 5 5 5 5;
   
 }
@@ -505,7 +481,7 @@ section{
   padding:10px;
 	padding-left: 3rem;
 	padding-right: 3rem;
-  background-color:#663399;
+  background-color: #a7a7a7;
   color:white;
   border-radius:28px;
   
@@ -515,7 +491,7 @@ section{
 }
  
 .open-button:hover{
-  background-color: #3B1D59;
+  background-color: #dc3545;
 }
  
 .popup {
@@ -574,9 +550,25 @@ section{
 }
 
 .card-header{
-  background-color: #663399;
+ 
   font-size: 18px;
   font-weight: lighter;
   text-transform: uppercase;
   color:white;
 }
+
+
+body
+{
+  background-image: url(img/3.jpg);
+	background-size: cover;
+  
+}
+
+#login
+{
+    padding: 180px 0;
+   
+}
+
+
