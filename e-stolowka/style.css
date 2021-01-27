@@ -21,7 +21,8 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+  vertical-align: baseline;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -29,7 +30,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  
 }
 ol, ul {
   list-style: none;
@@ -51,8 +53,8 @@ table {
 /* Globalne style tekstu */
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    color: grey;
+     font-family: 'Rubik', sans-serif;
+  
     line-height: 1.7;
 }
 
@@ -76,7 +78,7 @@ h2{
 
 h4,strong
 {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 h3{
@@ -93,6 +95,7 @@ h5{
   
   
 }
+
 
 /*kolumny kontenery, sekcje */
 
@@ -228,6 +231,8 @@ section{
   padding: 10;
   text-transform: uppercase;
   font-size: 30px;
+font-weight: 500;
+color:#dc3545!important;
 }
 
 .data_menu___
@@ -236,7 +241,6 @@ section{
   color:gray;
   text-transform: uppercase;
   font-size: 16px;
- 
   text-align: center;
 }
 
@@ -268,7 +272,7 @@ section{
     height: 24px;
     
     left: 20px;
-    top: 15px;
+    top: 34px;
     
     border-top: 1.5px solid black;
     border-right: 1.5px solid black;
@@ -291,7 +295,7 @@ section{
     height: 24px;
     
     right: 20px;
-    top: -20px;
+    top: -40px;
     
     border-top: 1.5px solid black;
     border-right: 1.5px solid black;
@@ -413,9 +417,9 @@ section{
   
   width: 100%;
   padding: 0 0 5 0;
-  color: #2d4338;
+  color: black;
   font-weight: 500;
-  font-size:23px;
+  font-size:24px;
   text-transform: uppercase;
 }
 
@@ -435,12 +439,15 @@ section{
 }
 
 .kalendarz_dzien.wybrane .kalendarz_data, .kalendarz_dzien.wybrane .kalendarz_dania{
-  color: #dc3545;
-  font-weight: 600;
+  color: white ;
+ 
+  background-color: #ffa600;
+  border-radius: 0%;
+  padding: 5 5 5 5;
 }
 
 .kalendarz_data {
-  color: #040605;
+  color: #696969;
   font-weight: 400;
   
 }
@@ -483,10 +490,6 @@ section{
   background-color: #a7a7a7;
   color:white;
   border-radius:28px;
-  
-
-	
-   
 }
  
 .open-button:hover{
@@ -569,5 +572,4 @@ body
     padding: 180px 0;
    
 }
-
 

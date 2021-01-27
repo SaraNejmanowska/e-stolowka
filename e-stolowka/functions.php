@@ -71,7 +71,7 @@ VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilew
 $db->close();
 		   
         } else {
-          echo 'Śniadanie: Wybierz coś na śniadanie.';
+		  
 		}
 		
 
@@ -102,7 +102,7 @@ VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilew
 $db->close();
 		   
         } else {
-          echo 'Obiad: Wybierz coś na obiad.';
+       
         }
 
 
@@ -133,7 +133,7 @@ VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilew
 $db->close();
 		   
         } else {
-          echo 'Kolacja: Wybierz coś na kolacje.';
+          
         }
 
 
@@ -317,13 +317,13 @@ function ZamowioneDania($data = ''){  //funkcja wyswietlająca zamówione dania 
 	  //to odpowiada za Wednesday December 23
 	
 	global $db;
-	$wynik = $db->query("SELECT title FROM zamowienia  WHERE date = '".$data."' AND username = 'amilewski'");
+	$wynik = $db->query("SELECT typ,title FROM zamowienia  WHERE date = '".$data."' AND username = 'amilewski'");
 	if($wynik->num_rows > 0){
 		$data_menu__  .= '<ul class="sidebar__list">';
-		
+
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__  .= '<li class="sidebar__list-item"><span class="list-item__time"></span>'.$row['title'].'</li>';
+            $data_menu__  .= '<li class="sidebar__list-item"><span class="list-item__time"></span>'.$row['typ'].': '.$row['title'].'</li>';
         }
 		$data_menu__  .= '</ul>';
 	}
@@ -335,48 +335,49 @@ function ZamowioneDania($data = ''){  //funkcja wyswietlająca zamówione dania 
 
 function StworzJadlospis($data = ''){  //funkcja wyswietlająca zamówione dania w zależnosci na jaką date najedzie użytkownik
 	$data = $data?$data:date("Y-m-d"); //ustalanie aktualnej daty
-	$data_menu__  = '<div class="data_menu___  ">'.dataPolska($data, 'l').'<br>'.dataPolska($data, 'd F').'</div>';  //to odpowiada za Wednesday December 23
-	$pop ='<div class="text-center"><button name = "submit" class="open-button" name="submit" value="'.$data.'">Zapisz</button></div>';
+	$data_menu_lewe = '<div class="data_menu___">'.dataPolska($data, 'l').'<br>'.dataPolska($data, 'd F').'</div>';  //to odpowiada za Wednesday December 23
+	$pop ='<div class="text-center"> <button name = "submit" class="open-button" name="submit" value="'.$data.' ">Zapisz</button></div>';
 	global $db;
+	
 	$form =  '<form action="" method="post">';
 	$endform ='</form>';
 	echo $form;
 	$wynik = $db->query("SELECT title FROM aktualne_menu  WHERE date = '".$data."' AND typ = 'sniadanie' ");
 	if($wynik->num_rows > 0){
-		$data_menu__   .= '<ul class="sidebar__list">';
-		//$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Wybierz Posiłki</li>';
-		$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Śniadanie</li>';
+		$data_menu_lewe .= '<ul class="sidebar__list">';
+		//$data_menu_lewe .= '<li class="sidebar__list-item sidebar__list-item--complete">Wybierz Posiłki</li>';
+		$data_menu_lewe .= '<li class="sidebar__list-item sidebar__list-item--complete">Śniadanie</li>';
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__   .= '<li class="sidebar__list-item"> <input type="radio" name="Class1" value="" '.$row['title'].'" > '.$row['title'].'</li>';
+            $data_menu_lewe .= '<li class="sidebar__list-item"><input type="radio" name="Class1" value="'.$row['title'].'" > '.$row['title'].'</li>';
         }
-		$data_menu__   .= '</ul>';
+		$data_menu_lewe .= '</ul>';
 	}
 	$wynik = $db->query("SELECT title FROM aktualne_menu  WHERE date = '".$data."' AND typ = 'obiad' ");
 	if($wynik->num_rows > 0){
-		$data_menu__   .= '<ul class="sidebar__list">';
-		$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Obiad</li>';
+		$data_menu_lewe .= '<ul class="sidebar__list">';
+		$data_menu_lewe .= '<li class="sidebar__list-item sidebar__list-item--complete">Obiad</li>';
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__   .= '<li class="sidebar__list-item"> <input type="radio" name="Class2" value="" '.$row['title'].'" > '.$row['title'].'</li>';
+            $data_menu_lewe .= '<li class="sidebar__list-item"><input type="radio" name="Class2" value="'.$row['title'].'" > '.$row['title'].'</li>';
         }
-		$data_menu__   .= '</ul>';
+		$data_menu_lewe .= '</ul>';
 	}
 	$wynik = $db->query("SELECT title FROM aktualne_menu  WHERE date = '".$data."' AND typ = 'kolacja' ");
 	if($wynik->num_rows > 0){
-		$data_menu__   .= '<ul class="sidebar__list">';
-		$data_menu__   .= '<li class="sidebar__list-item sidebar__list-item--complete">Kolacja</li>';
+		$data_menu_lewe .= '<ul class="sidebar__list">';
+		$data_menu_lewe .= '<li class="sidebar__list-item sidebar__list-item--complete">Kolacja</li>';
 		$i=0;
 		while($row = $wynik->fetch_assoc()){ $i++;
-            $data_menu__   .= '<li class="sidebar__list-item"> <input type="radio" name="Class3" value="" '.$row['title'].'"> '.$row['title'].'</li>';
+            $data_menu_lewe .= '<li class="sidebar__list-item"><input type="radio" name="Class3" value="'.$row['title'].'"> '.$row['title'].'</li>';
 			
         }
-		$data_menu__   .= '</ul>';
+		$data_menu_lewe .= '</ul>';
 		
 	}
-	//$data_menu__   .= '<input type="text"   name="Class4" value="'.$data.'">sss';
+	//$data_menu_lewe .= '<input type="text"   name="Class4" value="'.$data.'">sss';
 	
-	echo $data_menu__  ;
+	echo $data_menu_lewe;
 	$wynik = $db->query("SELECT title FROM aktualne_menu  WHERE date = '".$data."'");
 	if($wynik->num_rows > 0){
 	echo $pop;
@@ -384,6 +385,7 @@ function StworzJadlospis($data = ''){  //funkcja wyswietlająca zamówione dania
 	}
 	echo $endform;
 	
+
 }
 ?>
 

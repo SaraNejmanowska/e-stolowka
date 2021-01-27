@@ -11,10 +11,17 @@ include_once 'functions.php';
     <link rel="stylesheet" href="style/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" >
 
-    <script src="scripts.js"></script>
+
     <script src="js/jquery.min.js"></script>
+
    
-  
+    <script src="scripts.js"></script>
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    
     </head>
     <body>
         
@@ -76,6 +83,7 @@ include_once 'functions.php';
     <div class="card-header bg-danger text-center">
     STWÓRZ JADŁOSPIS 
     </div>
+    
 
       <aside class="menu__prawe " id="lista_dan2">
       <?php echo StworzJadlospis(); ?>		
