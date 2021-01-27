@@ -212,8 +212,10 @@ section{
 
  .home
  {
-    padding: 40px 90px 10px 140px ;
-    height: 90%;
+    padding: 100px 90px 10px 140px ;
+    height: 100%;
+    overflow: hidden;
+  
  }
 
 
@@ -237,7 +239,7 @@ color:#dc3545!important;
 
 .data_menu___
 {
-  padding: 0 0 25 0; 
+  padding: 0 0 10 0; 
   color:gray;
   text-transform: uppercase;
   font-size: 16px;
@@ -372,7 +374,7 @@ color:#dc3545!important;
   
   color: #2d4338;
   font-weight: 100;
-  font-size: 19px;
+  font-size: 17px;
   padding: 0 0 0 0;
  
 }
@@ -573,3 +575,8 @@ body
    
 }
 
+.navbar
+{
+  position:fixed;
+  width:100%;
+}
