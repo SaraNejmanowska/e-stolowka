@@ -62,7 +62,7 @@ include_once 'functions.php';
     <div class="row home">
     
 
-        <div class="col-lg-7 col-md-12">
+        <div class="col-xl-7 col-lg-12">
           <div class="shadow rounded">	<div id="calendar_div">
           <?php echo WywolajKalendarz(); ?>
           </div>
@@ -70,7 +70,7 @@ include_once 'functions.php';
 
           <div class="Dania shadow rounded">
           <div class="card-header bg-danger    text-center">
-        PODGLĄD ZAMÓWIONYCH DAŃ
+       <h2> PODGLĄD ZAMÓWIONYCH DAŃ </h2>
          </div>
           <aside class="menu__lewe text-center" id="lista_dan">
           <?php echo ZamowioneDania(); ?>		
@@ -81,10 +81,10 @@ include_once 'functions.php';
 
 
 
-      <div class="col-lg-5 col-md-12">
+      <div class="col-xl-5 col-lg-12">
 		  <div class="Jadlospis full shadow rounded ">
     <div class="card-header bg-danger text-center">
-    STWÓRZ JADŁOSPIS 
+    <h2>STWÓRZ JADŁOSPIS</h2> 
     </div>
     
 
