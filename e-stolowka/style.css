@@ -63,7 +63,7 @@ p{
 }
 
 h1,h2,h3,h4, label{
-    color:#45474f;
+    color:white;
 }
 
 h1{
@@ -97,136 +97,134 @@ h5{
 }
 
 
-/*kolumny kontenery, sekcje */
-
+/*KOLUMNY. KONTENERY, SEKCJE*/
 
 
 section{
-    clear:both;
-    
-}
-
-.row
-{
-    margin-left: 0%;
-    margin-right: 0%;
+    clear:both; /*Element jest przesuwany poniżej elementów pływających po obu stronach. */
 }
 
 #login
 {
-    padding: 180px 0;
+    padding: 180px 0; /*margines górny, prawy*/
 }
 
-.nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
- }
+/*GÓRNY PASEK NAWIGACYJNY*/
+
+.navbar
+{
+  position:fixed;
+  width:100%;
+}
+@media screen and (max-width: 1200px) { /* DO POPRAWY */
+  .navbar {
+      width:70px;
+      } 
+  }
 
 
- /* The side navigation menu */
+
+ /* BOCZNY PASEK NAWIGACYJNY*/
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 70px; /* 0 width - change this with JavaScript */
-    position: fixed;
-    z-index: 1; /* Stay on top */
-    top: 58px; /* Stay at the top */
+    height: 100%; /* 100% wysokości */
+    width: 70px; /* 70px szerokości - zmieniana za pomocą JavaScript */
+    z-index: 1; /* Kolejność wyświetlania elemntów gdy te na siebie nachodzą */
+    position: fixed; /* Możliwośc samodzielnego wypozycjonowania elementu */
+    top: 58px; 
     left: 0;
-    /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    overflow-x: hidden; /* Wyłączone scrollowanie horyzontalne */
+    padding-top: 20px; /* Górny margines*/
+    transition: 0.5s; /* Efekt przejścia - 0,5 s*/
  
    
   }
   
-
-  /* The navigation menu links */
+  /* Odnośniki w pasku nawigacyjnym */
   .sidenav a {
-    padding: 0px 0px 30px 18px;
+    padding: 0px 0px 30px 18px; /*margines górny, prawy, dolny, lewy*/
+    display: inline-flex; /* bloki wyświetlane w lini*/
     text-decoration: none;
-    font-size: 16px;
-    color: white;
-    display: inline-flex;
-    transition: 0.3s;
   }
   
-.sidenav span{
-  margin-left: 20px;
-  display: flex;
-  overflow: hidden;
-}
-
-
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
-    position: flex;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 150px;
-  }
-  
-  
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  /* Tekst w pasku nawigacyjnym */
+  .sidenav span{
+    margin-left: 20px; /* Lewy margines - 20 px */
+    overflow: hidden; /* Wyłączony pasek scrollowania */
+    font-size: 16px; /*Wielkość tekstu*/
+    color: white; /* Kolor tekstu */
   }
 
 
+  /* Zmiana grubości czcionki po najechaniu myszką*/
+  .sidenav span:hover {
+    font-weight:bold; /* Zmiana grubości czcionki na bold */
+  }
 
+
+/*SEKCJA STRONY GŁÓWNEJ*/
+  .home 
+  {
+    
+     padding: 6% 2% 0% 6% ; /*margines górny, prawy, dolny, lewy*/
+     height: 100%; /* Wysokość - 100 % */
+    
+  }
+  @media screen and (max-width: 1200px) { /* DO POPRAWY */
+    .home {
+      padding: 5% 20% 0% 15% ; /*margines górny, prawy, dolny, lewy*/
+        } 
+    }
+    @media screen and (max-width: 576px) { /* DO POPRAWY */
+      .home {
+        padding: 5% 15% 0% 15% ; /*margines górny, prawy, dolny, lewy*/
+          } 
+      }
+
+ 
+  /* ID Kalendarza */
   #calendar_div {
-    
-    width: 100%;
-    padding:0 0 0 0;
-    
+    width: 100%; /* szerokość kalendarza */
   }
+  @media screen and (max-width: 1200px) { /* DO POPRAWY */
+    #calendar_div {
+        width:120%;
+        } 
+    }
 
-  
+
+
+/*Kolumna Dania*/
   .Dania {
  
-    height: 31%;  
-    width: 100%;
-    margin-top: 28px;
-    background-color: white;
+    height: 30%;  /* wysokość kolumny */ 
+    width: 100%; /* szerokość kolumny */ 
+    margin-top: 28px; /* górny margines */
+    background-color: white; /*kolor tła*/
     
   }
-
-  
- .left-side
- {
-
-  height: 85%;  
-  width: 100%;
-
-  
- }
-
-
- .home
- {
-    padding: 100px 90px 10px 140px ;
-    height: 100%;
-    overflow: hidden;
-  
- }
-
+  @media screen and (max-width: 1200px) { /*  */
+    .Dania {
+        width:120%; /* szerokość elementu */
+        height: auto;  /* Wysokość kolumny dopasowuje się automatycznie */
+        margin-bottom: 28px; /* Dolny margines */
+        } 
+    }
+ 
 
 .kalendarz {
-  background-color: white;
-  border-radius: 0;
-  width: 100%;
-  height:62%;
-  color: #040605;
-  padding: 7 20 5 20;
+  background-color: white; /* kolor tła*/
+  border-radius: 0.8%; /* zaokrąglone  krawędzie elementu */
+  width: 100%; /* szerokość elementu */
+  height:60%; /* wysokość elementu */
+  padding: 7 20 5 20; /*margines górny, prawy, dolny, lewy*/
 }
+@media screen and (max-width: 1200px) { /* DO POPRAWY */
+  .kalendarz {
+    
+      height: auto;  /* wysokość kolumny */
+      } 
+  }
+
 
 .data_menu__
 {
@@ -374,7 +372,7 @@ color:#dc3545!important;
   
   color: #2d4338;
   font-weight: 100;
-  font-size: 17px;
+  font-size: 19px;
   padding: 0 0 0 0;
  
 }
@@ -492,6 +490,7 @@ color:#dc3545!important;
   background-color: #a7a7a7;
   color:white;
   border-radius:28px;
+  margin-top: 3%;
 }
  
 .open-button:hover{
@@ -521,37 +520,20 @@ color:#dc3545!important;
     position: relative;
 }
  
-/* Popup close button */
-.close-button {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.8);
-    font-size: 20px;
-    text-align: center;
-    color: #fff;
-    text-decoration:none;
-}
- 
-.close-button:hover {
-    background: rgba(0,0,0,1);
-}
- 
-@media screen and (max-width: 720px) {
-.popup-content {
-    width:90%;
-    } 
-}
 
 
 .Jadlospis
 {
   background-color: white;
-  height: auto;
+  height: 94%;
 }
+@media screen and (max-width: 1200px) { /* DO POPRAWY */
+  .Jadlospis {
+      width:120%;
+      height: auto;
+      margin-bottom: 5%; /* Dolny margines */
+      } 
+  }
 
 .card-header{
  
@@ -575,8 +557,3 @@ body
    
 }
 
-.navbar
-{
-  position:fixed;
-  width:100%;
-}
