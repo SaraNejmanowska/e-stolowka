@@ -58,10 +58,14 @@ if(mysqli_connect_errno())
 			$wybrana_data = $_POST['submit'];
 			echo ''.$wybrana_data;
 			echo 'Śniadanie:  ' . $_POST['Class1'];
-			$sql = "INSERT INTO zamowienia (id, title, date, username,typ)
+			$sql = 
+			
+			
+			"DELETE FROM zamowienia where date= STR_TO_DATE('".$wybrana_data."','%Y-%m-%d') and username= 'amilewski' and typ='Śniadanie'";
+			$sql2 ="
+INSERT INTO zamowienia (id, title, date, username,typ)
 VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski','Śniadanie')";
-
-			if ($db->query($sql) === TRUE) {
+			if ($db->query($sql) === TRUE & $db->query($sql2) === TRUE) {
 			echo "New record created successfully";
 																	} 			
 																	else {
@@ -89,10 +93,14 @@ if(mysqli_connect_errno())
 			$wybrana_data = $_POST['submit'];
 			echo ''.$wybrana_data;
 			echo 'Obiad:  ' . $_POST['Class2'];
-			$sql = "INSERT INTO zamowienia (id, title, date, username,typ)
+			$sql = 
+			
+			
+			"DELETE FROM zamowienia where date= STR_TO_DATE('".$wybrana_data."','%Y-%m-%d') and username= 'amilewski' and typ='Obiad'";
+			$sql2 ="
+INSERT INTO zamowienia (id, title, date, username,typ)
 VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski','Obiad')";
-
-			if ($db->query($sql) === TRUE) {
+			if ($db->query($sql) === TRUE & $db->query($sql2) === TRUE) {
 			echo "New record created successfully";
 																	} 			
 																	else {
@@ -119,11 +127,14 @@ if(mysqli_connect_errno())
 			$wybrane = $_POST['Class3'];
 			$wybrana_data = $_POST['submit'];
 			echo ''.$wybrana_data;
-			echo 'Kolacja:  ' . $_POST['Class3'];
-			$sql = "INSERT INTO zamowienia (id, title, date, username,typ)
+			$sql = 
+			
+			
+			"DELETE FROM zamowienia where date= STR_TO_DATE('".$wybrana_data."','%Y-%m-%d') and username= 'amilewski' and typ='Kolacja'";
+			$sql2 ="
+INSERT INTO zamowienia (id, title, date, username,typ)
 VALUES ('', '".$wybrane."', STR_TO_DATE('".$wybrana_data."','%Y-%m-%d'), 'amilewski','Kolacja')";
-
-			if ($db->query($sql) === TRUE) {
+			if ($db->query($sql) === TRUE & $db->query($sql2) === TRUE) {
 			echo "New record created successfully";
 																	} 			
 																	else {
@@ -160,18 +171,6 @@ $db->close();
 			
 			<a href="javascript:void(0);" class="nastepny-miesiac" onclick="wywolajKalendarz('calendar_div','<?php echo date("Y",strtotime($data.' + 1 Month')); ?>','<?php echo date("m",strtotime($data.' + 1 Month')); ?>');"></a>
 		</section>
-		
-							<div class="popup" popup-name="popup-1">
-    <div class="popup-content">
-    <h2>Title of Popup 1</h2>
-<?php echo ZamowioneDania(); //nie działa ponieważ funkcja liczy na date, której nie wczytuje ?>
-<input type="button" onclick="location.href='druga.php';" value="Go to Google" />
-<a class="close-button" popup-close="popup-1" href="javascript:void(0)">x</a>  
-    </div>
-</div>
-	
-		
-		
 		
 		
 		<section class="dni_tygodnia">
